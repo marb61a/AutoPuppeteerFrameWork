@@ -1,0 +1,24 @@
+{
+  "name": "autopuppeteerframework",
+  "version": "1.0.0",
+  "description": "Test Framework using Jest and Puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marb61a/AutoPuppeteerFrameWork.git"
+  },
+  "author": "Martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marb61a/AutoPuppeteerFrameWork/issues"
+  },
+  "homepage": "https://github.com/marb61a/AutoPuppeteerFrameWork#readme",
+  "dependencies": {
+    "jest": "^26.4.0",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^5.2.1"
+  }
+}
