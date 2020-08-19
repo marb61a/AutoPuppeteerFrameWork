@@ -4,7 +4,7 @@
   "description": "Test Framework using Jest and Puppeteer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/marb61a/AutoPuppeteerFrameWork#readme",
   "dependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-jest": "^26.3.0",
     "jest": "^26.4.0",
     "jest-puppeteer": "^4.4.0",
     "puppeteer": "^5.2.1"
