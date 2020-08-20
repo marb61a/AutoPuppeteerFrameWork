@@ -12,7 +12,7 @@ export default class FeedbackPage extends BasePage {
         await page.waitForSelector('#comment');
     }
 
-    async submitFeedback(){
+    async submitFeedback(name, email, subject, comment){
         await page.type('#name', name);
         await page.type('#email', email);
         await page.type('#subject', subject);

@@ -4,7 +4,7 @@ import FeedbackPage from '../pages/FeedbackPage';
 
 import TopBar from '../pages/components/TopBar';
 
-describe('Example Test', () => {
+describe('End to End Test', () => {
     let homePage;
     let loginPage;
     let feedbackPage;
@@ -18,24 +18,14 @@ describe('Example Test', () => {
         topbar = new TopBar();
     });
 
-    it('Homepage should work', async () => {
+    it('Should load homepage', async() => {
         await homePage.visit();
+        homePage.isNavbarDisplayed();
     });
 
-    it('Navbar should be displayed', async () => {
-        await homePage.isNavbarDisplayed();
-        await topbar.isTopBarDisplayed();
-    });
-
-    // it('Try to login', async() => {
-    //     await loginPage.visit();
-    //     await loginPage.isLoginFormDisplayed();
-    //     await loginPage.login("username", "password");
-    //     await loginPage.wait(5000);
-    // });
-
-    it('Feedback should work', async() => {
-
+    it('Should submit feedback', () => {
+        await homePage.clickFeedbackLink();
+        
     });
 
 });
