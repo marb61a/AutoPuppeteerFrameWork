@@ -4,6 +4,8 @@ import FeedbackPage from '../pages/FeedbackPage';
 
 import TopBar from '../pages/components/TopBar';
 
+import { username, password, timeout } from '../config';
+
 describe('End to End Test', () => {
     let homePage;
     let loginPage;
@@ -11,7 +13,7 @@ describe('End to End Test', () => {
     let topbar;
 
     beforeAll(async () => {
-        jest.setTimeout(15000);
+        jest.setTimeout(timeout);
         homePage = new HomePage();
         loginPage = new LoginPage();
         feedbackPage = new FeedbackPage();
@@ -20,12 +22,21 @@ describe('End to End Test', () => {
 
     it('Should load homepage', async() => {
         await homePage.visit();
-        homePage.isNavbarDisplayed();
+        await homePage.isNavbarDisplayed();
     });
 
-    it('Should submit feedback', () => {
+    it('Should submit feedback', async () => {
         await homePage.clickFeedbackLink();
-        
+        await feedbackPage.isFeedbackFormDisplayed();
+        await feedbackPage.submitFeedback("Joe Bloggs", "joe@example.com", "subject", "This is a comment");
+    });
+
+    it('Should login to application', async() => {
+        await homePage.visit();
+        await topbar.isTopBarDisplayed();
+        await topbar.clickSigninButton();
+        await loginPage.isLoginFormDisplayed();
+        await loginPage.login(username, password);
     });
 
 });
